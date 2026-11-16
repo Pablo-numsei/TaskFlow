@@ -193,3 +193,83 @@ h1 { margin-bottom: 7px; color: #1e1e1e; font: 800 29px Manrope, sans-serif; let
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Responsive and touch-device fixes */
+.task-modal {
+  max-height: calc(100vh - 36px);
+  max-height: calc(100dvh - 36px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.modal-backdrop {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .task-actions {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 520px) {
+  .welcome-row {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .welcome-row > .primary-button {
+    align-self: flex-start;
+    min-height: 42px;
+    font-size: 12px;
+    padding: 0 14px;
+  }
+
+  .page-subtitle {
+    max-width: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-content {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .topbar {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+
+  .tasks-section {
+    padding-right: 11px;
+    padding-left: 11px;
+  }
+
+  .filter-tabs {
+    gap: 12px;
+  }
+
+  .filter-tab {
+    gap: 4px;
+    font-size: 9px;
+  }
+
+  .stat-card {
+    padding: 11px;
+  }
+
+  .stat-top {
+    gap: 5px;
+  }
+
+  .task-modal {
+    padding: 16px;
+  }
+
+  .modal-actions {
+    flex-wrap: wrap;
+  }
+}
